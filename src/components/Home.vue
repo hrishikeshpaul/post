@@ -115,7 +115,7 @@ export default {
       this.sentence_array = this.sentence.split(' ')
       this.button_text = 'Detecting...'
 
-      axios.post('http://127.0.0.1:5000/',{sentence: this.sentence})
+      axios.post('https://post-server-app.herokuapp.com/',{sentence: this.sentence})
       .then(res => {
 
         // let inp = document.getElementById('input_box')
