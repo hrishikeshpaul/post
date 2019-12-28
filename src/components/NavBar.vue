@@ -1,19 +1,5 @@
 <template>
 <div>
-  <!-- <nav class="navbar navbar-inverse" style="border-radius: 0px !important;">
-    <div class="container-fluid" style="width: 75%;">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">SPOT</a>
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><i class="icon-github"></i></a></li>
-          <li><a href="#"><span class="glyphicon icon-linked-in"></span></a></li>
-          <li><a href="#"><span class="glyphicon globe"></span></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
   <div class="container">
   <nav class="navbar navbar-default">
@@ -29,12 +15,10 @@
       </a>
       </div>
 
-
-
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right" style=' vertical-align: middle;'>
           <li><a href="#" @click.prevent='showInfo'>Info</a></li>
-          <li><a href="#">GitHub</a></li>
+          <li><a href="#" @click='openGithub'>GitHub</a></li>
         </ul>
       </div>
     </div>
@@ -47,6 +31,9 @@
 export default {
   name: 'Navbar',
   methods: {
+    openGithub() {
+      window.location.href="https://github.com/hrishikeshpaul/pos-tagger"
+    },
     showInfo(){
       this.$swal({
         title: 'Post',
