@@ -11,7 +11,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-              <a class="navbar-brand" href="/"><img src="../assets/post_logo.svg" alt="Dispute Bills">
+              <a class="navbar-brand" href="/"><img src="../assets/post_logo.svg" alt="POST Logo">
       </a>
       </div>
 
@@ -36,9 +36,10 @@ export default {
     },
     showInfo(){
       this.$swal({
-        title: 'Post',
+
+        width: '500px',
         confirmButtonColor: "#FFC0CB",
-        html:'<hr/><p>Post is a simple algorithm that was developed to tagging a word corresponding to its part of speech. The algorithm makes of a probabilisitic approach along with some randomness, together which forms the basis of an algorithm called Gibbs Sampling.</p> <p>To try it out, just type  a sentence in the input box provided below, and click on the button to tag the words!</p> <hr /> Developed  by  Hrishikesh Paul',
+        html:'<p style="font-size: 30px; font-weight: 400 !important; margin-top: 10px;">Post</p><hr/><p style="font-size: 17px; font-weight: 300 !important;">Post is a simple algorithm that was developed to tagging a word corresponding to its part of speech. The algorithm makes of a probabilisitic approach along with some randomness, together which forms the basis of an algorithm called Gibbs Sampling.</p><p style="font-size: 17px; font-weight: 300 !important;">To try it out, just type  a sentence in the input box provided below, and click on the button to tag the words!</p><hr /><p style="font-size: 12px; font-weight: 300 !important;">Developed By <a href="https://www.linkedin.com/in/hrishikeshpaul/" target="_blank">Hrishikesh Paul</a></p>',
       })
     }
   }
@@ -81,6 +82,10 @@ export default {
 
 .navbar-default .navbar-toggle .icon-bar {
   background-color: black;
+}
+
+/deep/ .swal2-title {
+  font-weight: 300 !important;
 }
 
 @media only screen and (max-width: 800px) {

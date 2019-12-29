@@ -67,7 +67,7 @@ export default {
     sentence(newVal) {
       if (newVal.length > 0) {
         this.detect_button = true
-        this.button_text = 'Detect POS!'
+        this.button_text = 'Tag the sentence!'
       } else {
         this.detect_button = false
         this.button_text = 'Get typing!'
@@ -81,7 +81,6 @@ export default {
   },
   methods: {
     tryAgain() {
-
       // eslint-disable-next-line no-console
       console.log('here')
       this.button_text = 'Get typing!'
@@ -106,6 +105,7 @@ export default {
           this.wordInfo = res
           this.$swal({
             title: word,
+            confirmButtonColor: "#FFC0CB",
             html: `<hr /><b>Frequency: </b>${res.data.frequency} <br /> <br /> <b>Part Of Speech: </b>${res.data.results[0].partOfSpeech} <br />`
           })
         })
@@ -113,7 +113,7 @@ export default {
     },
     detect() {
       this.sentence_array = this.sentence.split(' ')
-      this.button_text = 'Detecting...'
+      this.button_text = 'Tagging...'
 
       axios.post('https://post-server-app.herokuapp.com/',{sentence: this.sentence})
       .then(res => {
@@ -133,7 +133,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .center {
   width: 100%;
@@ -188,7 +187,7 @@ export default {
 .word_hover:hover {
   color: pink;
   cursor: pointer;
-  transition: all 0.5s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .pos_words {
@@ -217,19 +216,34 @@ export default {
   }
 
   .pos_words {
-    padding-right: 25px;
-    font-size: 35px;
+    padding-right: 20px;
+    font-size: 30px;
     display: inline-table;
     text-align: center;
   }
 
   .pos_class {
     display: table-row;
-    font-size: 17px;
+    font-size: 15px;
     border-radius: 5px !important;
     color: black !important;
     cursor: auto !important;
   }
+
+  .center {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: 200px;
+  }
+
 }
 
 </style>
