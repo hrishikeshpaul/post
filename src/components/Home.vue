@@ -115,7 +115,7 @@ export default {
       this.sentence_array = this.sentence.split(' ')
       this.button_text = 'Tagging...'
 
-      axios.post('https://post-server-app.herokuapp.com/',{sentence: this.sentence})
+      axios.post('https://post-tagger.herokuapp.com/',{sentence: this.sentence})
       .then(res => {
 
         // let inp = document.getElementById('input_box')
